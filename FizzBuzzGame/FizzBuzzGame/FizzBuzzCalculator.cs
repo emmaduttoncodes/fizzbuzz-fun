@@ -2,7 +2,6 @@
 
 public class FizzBuzzCalculator : IFizzBuzzCalculator
 {
-
     public List<string> GetFizzBuzzList(int startsAt, int increasesBy)
     {
         List<string> outputList = [];
@@ -14,12 +13,16 @@ public class FizzBuzzCalculator : IFizzBuzzCalculator
         {
             var matchingFactory = factories.FirstOrDefault(factory => input % factory.DivisableBy == 0);
             
-            // TODO: Remove null supression when we handle it
+            if (matchingFactory == null)
+            {
+                Console.WriteLine("Error occured: No matching factory");
+                outputList.Add($"{input}"); // Making an assumption of some sensible error handling
+            }
+
             outputList.Add(matchingFactory!.GetFizzBuzzValue(input));
         }
 
         return outputList;
-  
     }
 
 

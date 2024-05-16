@@ -1,17 +1,15 @@
-﻿// See https://aka.ms/new-console-template for more information
-using FizzBuzzGame;
+﻿using FizzBuzzGame;
 
 internal class Program
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        Console.WriteLine("~~~~~~~~~Welcome to FIZZBUZZ~~~~~~~~~");
 
         var startsAt = 1; 
-        var increasesBy = 10;
+        var increasesBy = 100;
         var fizzBuzzCalculator = new FizzBuzzCalculator();
         var outputList = fizzBuzzCalculator.GetFizzBuzzList(startsAt, increasesBy);
         outputList.ForEach(output => Console.WriteLine(output));
     }
-    
 }
