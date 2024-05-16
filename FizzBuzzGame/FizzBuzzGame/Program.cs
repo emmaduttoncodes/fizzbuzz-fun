@@ -7,8 +7,10 @@ internal class Program
     {
         Console.WriteLine("Hello, World!");
 
+        var lower = 1; 
+        var upper = 10;
         var fizzBuzzCalculator = new FizzBuzzCalculator();
-        var outputList = fizzBuzzCalculator.GetFizzBuzzList();
+        var outputList = fizzBuzzCalculator.GetFizzBuzzList(lower, upper);
         outputList.ForEach(output => Console.WriteLine(output));
     }
     
