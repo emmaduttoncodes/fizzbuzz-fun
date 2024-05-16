@@ -24,12 +24,30 @@ public class FizzBuzzCalculatorTests
     [Test]
     public void FizzBuzzCalculator_ReturnsFizzWhenInputIsDivisableBy3()
     {
+        //Arrange
         var startsAt = 3;
         var increasesBy = 1;
+
+        //Act
         var result = _fizzBuzzCalculator.GetFizzBuzzList(startsAt, increasesBy);
 
-        Assert.That(result, Is.Not.Null);
+        //Assert
         Assert.That(result, Is.Not.Null);
         Assert.That(result.SingleOrDefault, Is.EqualTo("Fizz"));
+    }
+
+    [Test]
+    public void FizzBuzzCalculator_ReturnsBuzzWhenInputIsDivisableBy5()
+    {
+        //Arrange
+        var startsAt = 5;
+        var increasesBy = 1;
+
+        //Act
+        var result = _fizzBuzzCalculator.GetFizzBuzzList(startsAt, increasesBy);
+
+        //Assert
+        Assert.That(result, Is.Not.Null);
+        Assert.That(result.SingleOrDefault, Is.EqualTo("Buzz"));
     }
 }
