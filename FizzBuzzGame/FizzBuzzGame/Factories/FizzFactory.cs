@@ -1,11 +1,11 @@
 ﻿namespace FizzBuzzGame;
 
-public class FizzPrinter : INumberFactory
+public class FizzFactory : INumberFactory
 {
     public int DivisableBy => 3;
 
     public string GetFizzBuzzValue(int input)
     {
-        return "Fizz";
+        return (input % 5 == 0)? "Buzz": $"{input}";
     }
 }
