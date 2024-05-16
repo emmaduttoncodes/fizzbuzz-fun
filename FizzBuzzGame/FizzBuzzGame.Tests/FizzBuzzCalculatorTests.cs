@@ -50,4 +50,19 @@ public class FizzBuzzCalculatorTests
         Assert.That(result, Is.Not.Null);
         Assert.That(result.SingleOrDefault, Is.EqualTo("Buzz"));
     }
+
+        [Test]
+    public void FizzBuzzCalculator_ReturnsFizzBuzzWhenInputIsDivisableBy15()
+    {
+        //Arrange
+        var startsAt = 15;
+        var increasesBy = 1;
+
+        //Act
+        var result = _fizzBuzzCalculator.GetFizzBuzzList(startsAt, increasesBy);
+
+        //Assert
+        Assert.That(result, Is.Not.Null);
+        Assert.That(result.SingleOrDefault, Is.EqualTo("FizzBuzz"));
+    }
 }
