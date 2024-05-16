@@ -6,7 +6,6 @@ public class FizzBuzzCalculator : IFizzBuzzCalculator
     {
         List<string> outputList = [];
         var inputRange = Enumerable.Range(startsAt, increasesBy).ToList<int>();
-
         var factories = GetAllFactories();
         
         foreach(int input in inputRange)
@@ -31,6 +30,7 @@ public class FizzBuzzCalculator : IFizzBuzzCalculator
     {
         var numberFactoryInterface = typeof(INumberFactory);
 
+        //Had to do a lot of googling to get this syntax correct
         var factories = AppDomain.CurrentDomain.GetAssemblies()
                         .SelectMany(x => x.GetTypes())
                         .Where(x => numberFactoryInterface.IsAssignableFrom(x) && !x.IsInterface)

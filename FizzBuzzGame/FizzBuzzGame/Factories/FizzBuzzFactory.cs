@@ -6,6 +6,6 @@ public class FizzBuzzFactory : INumberFactory
 
     public string GetFizzBuzzValue(int input)
     {
-        return (input % 5 == 0)? "FizzBuzz": $"{input}";
+        return (input % 15 == 0)? "FizzBuzz": $"{input}";
     }
 }
