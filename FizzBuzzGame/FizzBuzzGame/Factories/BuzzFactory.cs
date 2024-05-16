@@ -6,6 +6,6 @@ public class BuzzFactory : INumberFactory
 
     public string GetFizzBuzzValue(int input)
     {
-        return "Buzz";
+        return (input % 5 == 0)? "Buzz": $"{input}";
     }
 }

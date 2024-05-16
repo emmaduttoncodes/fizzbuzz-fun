@@ -23,4 +23,16 @@ public class BuzzFactoryTests
         Assert.That(result, Is.EqualTo("Buzz"));
     }
 
+    [Test]
+    public void BuzzFactory_ReturnsInputValueWhenInputNotDivisibleBy5()
+    {
+        //Arrange 
+        var input = 2;
+
+        //Act
+        var result = _buzzFactory.GetFizzBuzzValue(input);
+
+        //Assert
+        Assert.That(result, Is.EqualTo("2"));
+    }
 }
