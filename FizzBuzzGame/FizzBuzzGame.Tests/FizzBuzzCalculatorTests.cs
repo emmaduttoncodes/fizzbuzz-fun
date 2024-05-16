@@ -22,7 +22,7 @@ public class FizzBuzzCalculatorTests
     }
 
     [Test]
-    public void FizzBuzzCalculator_ReturnsFizzWhenInputIsDivisableBy3()
+    public void FizzBuzzCalculator_ReturnsFizzWhenInputIsDivisibleBy3()
     {
         //Arrange
         var startsAt = 3;
@@ -37,7 +37,7 @@ public class FizzBuzzCalculatorTests
     }
 
     [Test]
-    public void FizzBuzzCalculator_ReturnsBuzzWhenInputIsDivisableBy5()
+    public void FizzBuzzCalculator_ReturnsBuzzWhenInputIsDivisibleBy5()
     {
         //Arrange
         var startsAt = 5;
@@ -52,7 +52,7 @@ public class FizzBuzzCalculatorTests
     }
 
         [Test]
-    public void FizzBuzzCalculator_ReturnsFizzBuzzWhenInputIsDivisableBy15()
+    public void FizzBuzzCalculator_ReturnsFizzBuzzWhenInputIsDivisibleBy15()
     {
         //Arrange
         var startsAt = 15;
@@ -64,5 +64,20 @@ public class FizzBuzzCalculatorTests
         //Assert
         Assert.That(result, Is.Not.Null);
         Assert.That(result.SingleOrDefault, Is.EqualTo("FizzBuzz"));
+    }
+
+    [Test]
+    public void FizzBuzzCalculator_ReturnsIntegerIfNotDivisible()
+    {
+        //Arrange
+        var startsAt = 1;
+        var increasesBy = 1;
+
+        //Act
+        var result = _fizzBuzzCalculator.GetFizzBuzzList(startsAt, increasesBy);
+
+        //Assert
+        Assert.That(result, Is.Not.Null);
+        Assert.That(result.SingleOrDefault, Is.EqualTo("1"));
     }
 }
