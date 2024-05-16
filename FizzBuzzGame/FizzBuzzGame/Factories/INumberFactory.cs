@@ -3,5 +3,5 @@
 public interface INumberFactory
 {
     public int DivisableBy { get; }
-    string GetFizzBuzzValue();
+    string GetFizzBuzzValue(int input);
 }

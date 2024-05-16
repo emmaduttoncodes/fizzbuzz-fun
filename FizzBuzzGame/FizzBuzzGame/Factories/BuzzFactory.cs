@@ -4,7 +4,7 @@ public class BuzzFactory : INumberFactory
 {
     public int DivisableBy => 5;
 
-    public string GetFizzBuzzValue()
+    public string GetFizzBuzzValue(int input)
     {
         return "Buzz";
     }

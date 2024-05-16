@@ -15,7 +15,7 @@ public class FizzBuzzCalculator : IFizzBuzzCalculator
             var matchingFactory = factories.FirstOrDefault(factory => input % factory.DivisableBy == 0);
             
             // TODO: Remove null supression when we handle it
-            outputList.Add(matchingFactory!.GetFizzBuzzValue());
+            outputList.Add(matchingFactory!.GetFizzBuzzValue(input));
         }
 
         return outputList;
