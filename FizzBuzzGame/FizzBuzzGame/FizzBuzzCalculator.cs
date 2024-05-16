@@ -33,6 +33,7 @@ public class FizzBuzzCalculator : IFizzBuzzCalculator
                          .Where(x => numberFactoryInterface.IsAssignableFrom(x) && !x.IsInterface)
                          .Select(Activator.CreateInstance)
                          .Cast<INumberFactory>()
+                         .OrderByDescending(f => f.DivisableBy) // Want to make sure we order by largest divisor first as 15 can go into 3, 5, and 15, but we want it to print FizzBuzz
                          .ToList();
 
         return factories;
