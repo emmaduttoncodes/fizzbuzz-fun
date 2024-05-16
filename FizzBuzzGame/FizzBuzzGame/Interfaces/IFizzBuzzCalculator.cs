@@ -2,5 +2,5 @@
 
 public interface IFizzBuzzCalculator
 {
-    List<string> GetFizzBuzzList(int lower, int upper);
+    List<string> GetFizzBuzzList(int startsAt, int increasesBy);
 }
