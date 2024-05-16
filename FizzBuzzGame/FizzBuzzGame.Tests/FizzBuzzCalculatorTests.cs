@@ -17,6 +17,7 @@ public class FizzBuzzCalculatorTests
 
         Assert.That(result, Is.Not.Null);
         Assert.That(result, Is.TypeOf<List<string>>());
+        Assert.That(result, Has.Count.EqualTo(10));
     }
 
     [Test]
@@ -30,7 +31,6 @@ public class FizzBuzzCalculatorTests
         var result = _fizzBuzzCalculator.GetFizzBuzzList(startsAt, increasesBy);
 
         //Assert
-        Assert.That(result, Is.Not.Null);
         Assert.That(result.SingleOrDefault, Is.EqualTo("Fizz"));
     }
 
@@ -45,11 +45,10 @@ public class FizzBuzzCalculatorTests
         var result = _fizzBuzzCalculator.GetFizzBuzzList(startsAt, increasesBy);
 
         //Assert
-        Assert.That(result, Is.Not.Null);
         Assert.That(result.SingleOrDefault, Is.EqualTo("Buzz"));
     }
 
-        [Test]
+    [Test]
     public void FizzBuzzCalculator_ReturnsFizzBuzzWhenInputIsDivisibleBy15()
     {
         //Arrange
@@ -60,7 +59,6 @@ public class FizzBuzzCalculatorTests
         var result = _fizzBuzzCalculator.GetFizzBuzzList(startsAt, increasesBy);
 
         //Assert
-        Assert.That(result, Is.Not.Null);
         Assert.That(result.SingleOrDefault, Is.EqualTo("FizzBuzz"));
     }
 
@@ -75,7 +73,29 @@ public class FizzBuzzCalculatorTests
         var result = _fizzBuzzCalculator.GetFizzBuzzList(startsAt, increasesBy);
 
         //Assert
-        Assert.That(result, Is.Not.Null);
         Assert.That(result.SingleOrDefault, Is.EqualTo("1"));
+    }
+
+    [Test]
+    public void FizzBuzzCalculator_ReturnsExpectedSequenceForInput()
+    {
+        //Arrange
+        var startsAt = 1;
+        var increasesBy = 10;
+
+        //Act
+        var result = _fizzBuzzCalculator.GetFizzBuzzList(startsAt, increasesBy);
+
+        //Assert
+        Assert.That(result[0], Is.EqualTo("1"));
+        Assert.That(result[1], Is.EqualTo("2"));
+        Assert.That(result[2], Is.EqualTo("Fizz"));
+        Assert.That(result[3], Is.EqualTo("4"));
+        Assert.That(result[4], Is.EqualTo("Buzz"));
+        Assert.That(result[5], Is.EqualTo("Fizz"));
+        Assert.That(result[6], Is.EqualTo("7"));
+        Assert.That(result[7], Is.EqualTo("8"));
+        Assert.That(result[8], Is.EqualTo("Fizz"));
+        Assert.That(result[9], Is.EqualTo("Buzz"));
     }
 }

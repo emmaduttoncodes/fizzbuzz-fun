@@ -10,6 +10,6 @@ internal class Program
         var increasesBy = 100;
         var fizzBuzzCalculator = new FizzBuzzCalculator();
         var outputList = fizzBuzzCalculator.GetFizzBuzzList(startsAt, increasesBy);
-        outputList.ForEach(output => Console.WriteLine(output));
+        outputList.ForEach(Console.WriteLine);
     }
 }
